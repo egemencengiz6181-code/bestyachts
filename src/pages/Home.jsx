@@ -129,7 +129,7 @@ const Home = () => {
               <Link to="/yacht-building" className="btn-primary bg-red-600 hover:bg-red-700 text-white text-sm px-10 py-4 font-light tracking-widest uppercase transition-all duration-300">
                 EXPLORE YACHT BUILDING
               </Link>
-              <Link to="/contact" className="btn-secondary bg-transparent text-white border-2 border-white hover:bg-white hover:text-navy-950 text-sm px-10 py-4 font-light tracking-widest uppercase transition-all duration-300">
+              <Link to="/contact" className="btn-secondary bg-white text-navy-950 border-2 border-white hover:bg-navy-950 hover:text-white text-sm px-10 py-4 font-light tracking-widest uppercase transition-all duration-300">
                 GET IN TOUCH
               </Link>
             </motion.div>

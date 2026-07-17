@@ -22,16 +22,16 @@ const Navbar = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'GREEN CONCEPT', path: '#' },
-    { name: 'MEDIA', path: '#' },
-    { name: 'CONTACT', path: '/contact' },
+    { name: 'HOME', path: '/' },
+    { name: 'YACHT BUILDING', path: '/yacht-building' },
+    { name: 'YACHT SALES', path: '#' },
+    { name: 'YACHT REFIT', path: '#' },
+    { name: 'YACHTS CHARTER', path: '#' },
+    { name: 'YACHT MANAGEMENT', path: '#' },
+    { name: 'CONTACT US', path: '/contact' },
   ];
 
-  const rightLinks = [
-    { name: 'SAILING YACHTS', path: '#' },
-    { name: 'POWER YACHTS', path: '#' },
-    { name: 'SUPERYACHTS', path: '#' },
-  ];
+  const rightLinks = [];
 
   return (
     <nav
