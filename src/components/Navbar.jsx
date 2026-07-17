@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 w-full z-[200] transition-all duration-500 ${
         scrolled ? 'bg-navy-950/98 backdrop-blur-lg py-3 shadow-lg' : 'bg-navy-950/60 backdrop-blur-sm py-5'
       }`}
     >
@@ -43,7 +43,7 @@ const Navbar = () => {
           {/* Hamburger Menu Button - Left Side */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`text-2xl focus:outline-none z-[120] lg:block transition-colors duration-300 ${
+            className={`text-2xl focus:outline-none z-[220] relative lg:block transition-colors duration-300 ${
               scrolled ? 'text-navy-950 hover:text-red-500' : 'text-white hover:text-red-500'
             }`}
             aria-label="Toggle menu"
@@ -118,7 +118,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 z-[100]"
+              className="fixed inset-0 bg-black/60 z-[205]"
               onClick={() => setIsOpen(false)}
             />
             
@@ -128,7 +128,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="fixed top-0 left-0 h-full w-80 bg-navy-950 z-[110] shadow-2xl overflow-y-auto"
+              className="fixed top-0 left-0 h-full w-80 bg-navy-950 z-[210] shadow-2xl overflow-y-auto"
             >
               <div className="p-8">
                 {/* Close Button */}
