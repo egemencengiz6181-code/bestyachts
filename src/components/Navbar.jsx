@@ -43,7 +43,9 @@ const Navbar = () => {
           {/* Hamburger Menu Button - Left Side */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white text-2xl focus:outline-none z-50 lg:block"
+            className={`text-2xl focus:outline-none z-[120] lg:block transition-colors duration-300 ${
+              scrolled ? 'text-navy-950 hover:text-red-500' : 'text-white hover:text-red-500'
+            }`}
             aria-label="Toggle menu"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
@@ -63,7 +65,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-8">
             <a
               href="tel:+905356744346"
-              className="flex items-center space-x-2 text-white hover:text-red-500 transition-colors duration-300"
+              className={`flex items-center space-x-2 transition-colors duration-300 ${
+                scrolled ? 'text-navy-950 hover:text-red-500' : 'text-white hover:text-red-500'
+              }`}
             >
               <FaPhone className="text-sm" />
               <span className="font-light text-sm tracking-wide">+90 535 674 43 46</span>
@@ -73,7 +77,9 @@ const Navbar = () => {
                 href="https://www.facebook.com/100079578176023"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-red-500 transition-colors duration-300"
+                className={`transition-colors duration-300 ${
+                  scrolled ? 'text-navy-950 hover:text-red-500' : 'text-white hover:text-red-500'
+                }`}
               >
                 <FaFacebook className="text-lg" />
               </a>
@@ -81,7 +87,9 @@ const Navbar = () => {
                 href="https://www.instagram.com/bestyachtsturkey/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-red-500 transition-colors duration-300"
+                className={`transition-colors duration-300 ${
+                  scrolled ? 'text-navy-950 hover:text-red-500' : 'text-white hover:text-red-500'
+                }`}
               >
                 <FaInstagram className="text-lg" />
               </a>
@@ -89,7 +97,9 @@ const Navbar = () => {
                 href="https://www.linkedin.com/company/best-yachts-for-sale"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-red-500 transition-colors duration-300"
+                className={`transition-colors duration-300 ${
+                  scrolled ? 'text-navy-950 hover:text-red-500' : 'text-white hover:text-red-500'
+                }`}
               >
                 <FaLinkedin className="text-lg" />
               </a>
@@ -108,7 +118,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 z-40"
+              className="fixed inset-0 bg-black/60 z-[100]"
               onClick={() => setIsOpen(false)}
             />
             
@@ -118,7 +128,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="fixed top-0 left-0 h-full w-80 bg-navy-950 z-50 shadow-2xl overflow-y-auto"
+              className="fixed top-0 left-0 h-full w-80 bg-navy-950 z-[110] shadow-2xl overflow-y-auto"
             >
               <div className="p-8">
                 {/* Close Button */}
@@ -196,17 +206,6 @@ const Navbar = () => {
               </div>
             </motion.div>
           </>
-        )}
-      </AnimatePresence>
-    </nav>
-  );
-};
-
-export default Navbar;
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         )}
       </AnimatePresence>
     </nav>
