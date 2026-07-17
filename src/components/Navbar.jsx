@@ -112,29 +112,19 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 z-[205]"
-              onClick={() => setIsOpen(false)}
-            />
-            
-            {/* Sidebar */}
+            {/* Sidebar - Must be before overlay to be on top */}
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="fixed top-0 left-0 h-full w-80 bg-navy-950 z-[210] shadow-2xl overflow-y-auto"
+              className="fixed top-0 left-0 h-full w-80 bg-navy-950 z-[9999] shadow-2xl overflow-y-auto"
             >
               <div className="p-8">
                 {/* Close Button */}
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="absolute top-6 right-6 text-white text-2xl hover:text-red-500 transition-colors"
+                  className="absolute top-6 right-6 text-white text-2xl hover:text-red-500 transition-colors z-[10000]"
                 >
                   <FaTimes />
                 </button>
@@ -205,6 +195,16 @@ const Navbar = () => {
                 </div>
               </div>
             </motion.div>
+            
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/60 z-[9990]"
+              onClick={() => setIsOpen(false)}
+            />
           </>
         )}
       </AnimatePresence>
